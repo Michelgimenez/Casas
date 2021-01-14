@@ -1,0 +1,53 @@
+// Uso grid para poder centrar el div de list vertical/horizontalmente. Despues creo una gap para separar el el h3 del div de list
+// y finalmente uso justify-items para centrar verticalmente el h3
+.realtors {
+  background-color: $color-secondary;
+  grid-column: col-start 7 / full-end;
+  padding: 3rem;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  grid-row-gap: 2rem;
+
+  // Apartir de 800px, los vendedores cubren todo el ancho del row nuevo
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+  }
+
+  // A este div le doy el grid ya que quiero las columnas separado del h3, y le doy dos columnas, una que contenga espacio para la imagen
+  // y otra para el texto, en el texto uso max-content para que no se apriete la columna y se evite un quiebre del texto. Al gap de las rows
+  // le doy VW para que se vaya achicando al achicar la pantalla. Align para centrar el contenido verticalmente en cada columna.
+  &__list {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5vh;
+    align-items: center;
+
+    // Apartir de 800px quiero crear 3 columnas en la que cada una tenga min-content para la imagen y max para el texto, de esa forma
+    // tengo cada columna una al lado de la otra
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, min-content max-content);
+    }
+
+    // En 600px que la pantalla ya es muy chica y apretada, vuelvo a tener cada cosa debajo de de la otra
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: min-content max-content;
+    }
+  }
+
+  &__img {
+    width: 7rem;
+    border-radius: 50%;
+    display: block;
+  }
+
+  &__Sold {
+    text-transform: uppercase;
+    color: $color-grey-light-2;
+    margin-top: -3px;
+    font-size: 1rem;
+    color: rgb(198, 153, 99);
+  }
+}

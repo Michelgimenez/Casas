@@ -1,0 +1,99 @@
+.story {
+  // Al contenedor le doy 6 columnas/rows para poder ajustar de forma personalizada la posicion de las fotos. Uso el center
+  // para centrar las imagenes dentro de las columnas rows en las que se encuentren ya que las imagenes aveces no llegan a cubrir
+  // todo el contenedor entero que se le asigna, de esa forma al menos se centra en el espacio que hay
+  &__pictures {
+    background-color: $color-primary;
+    grid-column: full-start / col-end 4;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    background-image: linear-gradient(
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      ),
+      url(../img/back.jpg);
+    background-size: cover;
+
+    // Apartir de 800px, esta seccion va a ocupar todas las columnas, cubriendo todo el ancho. Y un padding a los lados para separar las
+    // imagenes de los bordes
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1 / -1;
+      padding: 3rem;
+    }
+  }
+
+  // La imagen quiero que vaya desde el principio de la segunda row hasta el final de la 5 Y el comienzo de la segunda columna y el
+  // final de la 5
+  &__img--1 {
+    width: 100%;
+    grid-row: 2 / 6; // Tambien en vez de 6 puedo colocar span 4 ya que quiero que desde la segunda row abarque 4 hacia abajo
+    grid-column: 2 / 6;
+    box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+
+    // Apartir de 800px quiero que la imagen ocupe 4 columnas y todo el alto del row. Deje comentado el ancho que hace que la imagen
+    // quede separada correctamente de la otra imagen
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 1 / -1;
+      grid-column: 1 / 5;
+      // width: 70%;
+    }
+  }
+
+  // Para hacer que la imagen sobresalga del contenedor, le agrego un poco mas de ancho y aumento el index para que se pueda ver
+  &__img--2 {
+    width: 115%;
+    grid-row: 4 / 6;
+    grid-column: 4 / 7;
+    z-index: 20;
+    box-shadow: 0 2rem 5rem rgba(#000, 0.2);
+
+    // Apartir de 800px la segunda imagen vuelve al 100% de ancho para no salirse del contenedor, se ve separada del borde por el padding
+    // y cubre todo el alto del row. Pero sigue ocupando las mismas columnas de antes que son 3. En caso de que quiera que cubra todo como
+    // la segunda imagen, deje comentadas las properties
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 1 / -1;
+      width: 100%;
+      // height: 100%;
+      // object-fit: cover;
+    }
+  }
+
+  // Para centrar el contenido, simplemente le doy flex, lo cambio a columna para recuperar que este una cosa debajo de otro y lo centro
+  // verticalmente. Despues centro horizontalmente usando align-items y uso flex-start para reemplazar el STRETCH que le da por default
+  // flexbox, de esa forma el boton no ocupa el 100% del ancho y comienza desde la izquierda. Al padding le doy los VW para que al achicar
+  // la pantalla, se achique a los lados el padding ya que cambia al ahicar la pantalla, el 8% de ancho a los lados
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 8vw;
+
+    /*  Asi lo centro usando flexbox
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    */
+
+    // Asi lo centro usando GRID, centrando todo verticalmente. Y para resolver lo del boton cubriendo el 100% del ancho, uso justify-items
+    // para controlar los elementos en cada row, en este caso que comiencen desde la izquierda
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+
+    // Apartir de 800px, esta seccion va a ocupar todas las columnas, cubriendo todo el ancho. Para que esta parte quede arriba, le doy
+    // que cubra la la row desde la 5 hasta el comienzo de la 6ta
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1 / -1;
+      grid-row: 5 / 6;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 4rem;
+  }
+}

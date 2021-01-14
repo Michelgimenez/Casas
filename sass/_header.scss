@@ -1,0 +1,106 @@
+// Esta seccion comienza donde empieza la columna de 1fr y finaliza donde termina la columna 6, es decir justo donde comienza la 7.
+// Despues para administrar el contenido dentro, voy a usar grid para poder crear rows dentro, en este caso creo una sola de 1fr, de esa
+// forma el primero elemento del header, osea la imagen, va a ocupar todo el espacio disponible empujando todos los elementos hacia abajo
+// y creandose varias rows por cada elemento ddonde estas solo ocpuan de espacio, lo que tengan dentro. Pero procedo a persoanlizar las
+// rows que se crean, entonces la segunda row que tiene el titulo, le doy que solo tenga de alto, lo que tenga de contenido, la row del h1
+// le doy que tenga 6rem de alto como minimo pero como maximo que tenga lo minimo indispensable para contener el h1. A la row del boton le
+// doy 1fr, de esa forma va a tener de alto lo mismo que la row del logo.
+// Para evitar que las columnas cubran el 100% del ancho les doy que cubran solo de ancho, el contenido que tienen dentro. Y eso me permite
+// teniendo espacio libre, poder centrar todo horizontalmente con justify-content, pero use minmax asi que al achicar la pantalla, se van
+// a achicar las columnas hasta cubrir el espacio minimo necesario que contenga el contenido
+.header {
+  background-color: $color-grey-dark-1;
+  grid-column: full-start / col-end 6;
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.93),
+      rgba($color-secondary, 0.93)
+    ),
+    url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem;
+  display: grid;
+  grid-template-rows: 5rem 8rem 8rem 5rem 5rem 5rem;
+  grid-template-columns: minmax(min-content, max-content);
+  justify-content: center;
+  align-content: center;
+
+  @media only screen and (max-width: 900px) {
+    grid-template-rows: 5rem 12rem 8rem 5rem 5rem 5rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    grid-template-rows: 5rem 15rem 8rem 10rem 5rem 5rem;
+  }
+
+  // Apartir de 800px el header ocupa todas las columnas
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
+
+  // Centro el logo horizontalmente
+  &__logo {
+    height: 3rem;
+    justify-self: center;
+  }
+
+  // Aca quiero que el boton comience desde la izquieda horizontalmente y verticalmente start seria arriba de todo, entonces arriba de todo
+  // y hacia la izquierda entre todo el espacio disponible que tiene
+  &__btn {
+    align-self: start;
+    justify-self: start;
+  }
+
+  // Al texto uso los pseudo para darle crear lineas de 1px de alto, y para tenerlas en horizontal, hago grid el div para crear 3 columnas
+  // 2 de 1fr para tener dos lineas que cubran lo mismo y el texto que cubra solo lo que tiene de contenido y centro todo verticalemente con
+  // align-items
+  &__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $color-grey-light-2;
+
+    @media only screen and (max-width: 1150px) {
+      font-size: 2.2rem;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+    }
+  }
+
+  // Establezco la altura para que todas tengan la misma. Despues creo 4 columnas para cada imagen y una gap entre cada una de 30px, y pro
+  // cedo a centrar cada imagen dentro de su columna de forma vertical con justify y uso align para centrar cada imagen dentro del div de
+  // forma vertical. Les doy un filtro bajandoses el brillo para que se vean
+  // apagadas. En cuanto a la altura, le doy cmo maximo 25px y que pueda bajar de eso, y al ancho que sea 100% pero puede bajar al achicarse
+  // la pantalla
+  &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem;
+    justify-items: center;
+    align-items: center;
+
+    @media only screen and (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 3rem;
+    }
+
+    img {
+      max-height: 2.5rem;
+      max-width: 100%;
+      filter: brightness(70%);
+    }
+  }
+}

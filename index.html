@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>Tu casa, tu libertad</title>
+  </head>
+  <body class="container">
+    <div class="mobile-nav">
+      <div class="mobile-nav__overlay">
+        <div class="mobile-nav__links">
+          <a href="#"> Inicio </a>
+          <a href="#"> Casas </a>
+          <a href="#"> Contacto </a>
+          <a href="#"> Acerca de </a>
+        </div>
+      </div>
+    </div>
+    <div class="burguer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="sidebar">
+      <img src="img/favicon.png" alt="" class="sidebar__logo" />
+      <nav class="sidebar__nav">
+        <ul class="sidebar__list">
+          <li class="sidebar__list-item">
+            <a href="" class="sidebar__link"> Inicio </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="" class="sidebar__link"> Casas </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="" class="sidebar__link"> Contacto </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="" class="sidebar__link"> Acerca de </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header class="header">
+      <h3 class="heading-3">Tu propia casa:</h3>
+      <h1 class="heading-1">La verdadera libertad personal</h1>
+      <button class="btn header__btn">Ver propiedades</button>
+      <div class="header__seenon-text">Recomendados en</div>
+      <div class="header__seenon-logos">
+        <img src="img/logo-bbc.png" alt="logo" />
+        <img src="img/logo-forbes.png" alt="logo" />
+        <img src="img/logo-techcrunch.png" alt="logo" />
+        <img src="img/logo-bi.png" alt="logo" />
+      </div>
+    </header>
+
+    <div class="realtors">
+      <h3 class="heading-3">Top 3 vendedores</h3>
+      <div class="realtors__list">
+        <img src="img/realtor-1.jpeg" alt="1" class="realtors__img" />
+        <div class="realtors__details">
+          <h4 class="heading-4 heading-4--light">Erik Feinmann</h4>
+          <p class="realtors__Sold">135 casas vendidas</p>
+        </div>
+        <img src="img/realtor-2.jpeg" alt="2" class="realtors__img" />
+        <div class="realtors__details">
+          <h4 class="heading-4 heading-4--light">Kim Brown</h4>
+          <p class="realtors__Sold">87 casas vendidas</p>
+        </div>
+        <img src="img/realtor-3.jpeg" alt="3" class="realtors__img" />
+        <div class="realtors__details">
+          <h4 class="heading-4 heading-4--light">Toby Ramsey</h4>
+          <p class="realtors__Sold">56 casas vendidas</p>
+        </div>
+      </div>
+    </div>
+    <section class="features">
+      <div class="feature">
+        <svg class="feature__icon">
+          <use xlink:href="img/sprite.svg#icon-global"></use>
+        </svg>
+        <h4 class="heading-4 heading-4--dark">Las casas mas lujosas</h4>
+        <p class="feature__text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+          distinctio necessitatibus pariatur voluptatibus.
+        </p>
+      </div>
+      <div class="feature">
+        <svg class="feature__icon">
+          <use xlink:href="img/sprite.svg#icon-trophy"></use>
+        </svg>
+        <h4 class="heading-4 heading-4--dark">Solo las mejores casas</h4>
+        <p class="feature__text">
+          Voluptatum mollitia quae. Vero ipsum sapiente molestias accusamus
+          rerum sed a eligendi aut quia.
+        </p>
+      </div>
+      <div class="feature">
+        <svg class="feature__icon">
+          <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+        </svg>
+        <h4 class="heading-4 heading-4--dark">Localidades hermosas</h4>
+        <p class="feature__text">
+          Tenetur distinctio necessitatibus pariatur voluptatibus quidem
+          consequatur harum.
+        </p>
+      </div>
+      <div class="feature">
+        <svg class="feature__icon">
+          <use xlink:href="img/sprite.svg#icon-key"></use>
+        </svg>
+        <h4 class="heading-4 heading-4--dark">Casa nueva en 1 semana</h4>
+        <p class="feature__text">
+          Vero ipsum sapiente molestias accusamus rerum. Lorem, ipsum dolor sit
+          amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <div class="feature">
+        <svg class="feature__icon">
+          <use xlink:href="img/sprite.svg#icon-presentation"></use>
+        </svg>
+        <h4 class="heading-4 heading-4--dark">Los mejores vendedores</h4>
+        <p class="feature__text">
+          Quidem consequatur harum, voluptatum mollitia quae. Tenetur distinctio
+          necessitatibus pariatur voluptatibus.
+        </p>
+      </div>
+      <div class="feature">
+        <svg class="feature__icon">
+          <use xlink:href="img/sprite.svg#icon-lock"></use>
+        </svg>
+        <h4 class="heading-4 heading-4--dark">Pagos seguros</h4>
+        <p class="feature__text">
+          Pariatur voluptatibus quidem consequatur harum, voluptatum mollitia
+          quae.
+        </p>
+      </div>
+    </section>
+
+    <!-- Esta bien tener el block y el elemento sin tener un padre block antes como lo seria un div de story -->
+    <div class="story__pictures">
+      <img src="img/story-1.jpeg" alt="House" class="story__img--1" />
+      <img src="img/story-2.jpeg" alt="House" class="story__img--2" />
+    </div>
+
+    <div class="story__content">
+      <h3 class="heading-3 mb-sm">Clientes felices</h3>
+      <h2 class="heading-2 heading-2--dark mb-md">
+        &ldquo;La mejor decision de nuestras vidas&rdquo;
+      </h2>
+      <p class="story__text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+        distinctio necessitatibus pariatur voluptatibus. Quidem consequatur
+        harum volupta!
+      </p>
+      <button class="btn">Encontra tu casa</button>
+    </div>
+
+    <section class="homes">
+      <div class="home">
+        <img src="img/house-1.jpeg" alt="house" class="home__img" />
+        <svg class="home__like">
+          <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+        </svg>
+        <h5 class="home__name">Casa de familia</h5>
+        <div class="home__location">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+          </svg>
+          <p>USA</p>
+        </div>
+        <div class="home__rooms">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+          </svg>
+          <p>5 habitaciones</p>
+        </div>
+        <div class="home__area">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-expand"></use>
+          </svg>
+          <p>325 m<sup>2</sup></p>
+        </div>
+        <div class="home__price">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-key"></use>
+          </svg>
+          <p>$1,200,000</p>
+        </div>
+        <button class="btn home__btn">Contactar vendedor</button>
+      </div>
+
+      <div class="home">
+        <img src="img/house-2.jpeg" alt="house" class="home__img" />
+        <svg class="home__like">
+          <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+        </svg>
+        <h5 class="home__name">Cristal moderno</h5>
+        <div class="home__location">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+          </svg>
+          <p>Canada</p>
+        </div>
+        <div class="home__rooms">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+          </svg>
+          <p>6 habitaciones</p>
+        </div>
+        <div class="home__area">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-expand"></use>
+          </svg>
+          <p>450 m<sup>2</sup></p>
+        </div>
+        <div class="home__price">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-key"></use>
+          </svg>
+          <p>$2,750,000</p>
+        </div>
+        <button class="btn home__btn">Contactar vendedor</button>
+      </div>
+
+      <div class="home">
+        <img src="img/house-3.jpeg" alt="house" class="home__img" />
+        <svg class="home__like">
+          <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+        </svg>
+        <h5 class="home__name">Casa de Country</h5>
+        <div class="home__location">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+          </svg>
+          <p>UK</p>
+        </div>
+        <div class="home__rooms">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+          </svg>
+          <p>4 habitaciones</p>
+        </div>
+        <div class="home__area">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-expand"></use>
+          </svg>
+          <p>250 m<sup>2</sup></p>
+        </div>
+        <div class="home__price">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-key"></use>
+          </svg>
+          <p>$850,000</p>
+        </div>
+        <button class="btn home__btn">Contactar vendedor</button>
+      </div>
+
+      <div class="home">
+        <img src="img/house-4.jpeg" alt="house" class="home__img" />
+        <svg class="home__like">
+          <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+        </svg>
+        <h5 class="home__name">Casa Rustica</h5>
+        <div class="home__location">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+          </svg>
+          <p>Portugal</p>
+        </div>
+        <div class="home__rooms">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+          </svg>
+          <p>3 habitaciones</p>
+        </div>
+        <div class="home__area">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-expand"></use>
+          </svg>
+          <p>480 m<sup>2</sup></p>
+        </div>
+        <div class="home__price">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-key"></use>
+          </svg>
+          <p>$1,950,000</p>
+        </div>
+        <button class="btn home__btn">Contactar vendedor</button>
+      </div>
+
+      <div class="home">
+        <img src="img/house-5.jpeg" alt="house" class="home__img" />
+        <svg class="home__like">
+          <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+        </svg>
+        <h5 class="home__name">Palacio Majestuoso</h5>
+        <div class="home__location">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+          </svg>
+          <p>Germany</p>
+        </div>
+        <div class="home__rooms">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+          </svg>
+          <p>18 habitaciones</p>
+        </div>
+        <div class="home__area">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-expand"></use>
+          </svg>
+          <p>4230 m<sup>2</sup></p>
+        </div>
+        <div class="home__price">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-key"></use>
+          </svg>
+          <p>$9,350,000</p>
+        </div>
+        <button class="btn home__btn">Contactar vendedor</button>
+      </div>
+
+      <div class="home">
+        <img src="img/house-1.jpeg" alt="house" class="home__img" />
+        <svg class="home__like">
+          <use xlink:href="img/sprite.svg#icon-heart-full"></use>
+        </svg>
+        <h5 class="home__name">Apartamento Moderno</h5>
+        <div class="home__location">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+          </svg>
+          <p>Italia</p>
+        </div>
+        <div class="home__rooms">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-profile-male"></use>
+          </svg>
+          <p>2 habitaciones</p>
+        </div>
+        <div class="home__area">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-expand"></use>
+          </svg>
+          <p>180 m<sup>2</sup></p>
+        </div>
+        <div class="home__price">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-key"></use>
+          </svg>
+          <p>$600,000</p>
+        </div>
+        <button class="btn home__btn">Contactar vendedor</button>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <figure class="gallery__item gallery__item--1">
+        <img src="img/gal-1.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--2">
+        <img src="img/gal-2.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--3">
+        <img src="img/gal-3.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--4">
+        <img src="img/gal-4.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--5">
+        <img src="img/gal-5.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--6">
+        <img src="img/gal-6.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--7">
+        <img src="img/gal-7.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--8">
+        <img src="img/gal-8.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--9">
+        <img src="img/gal-9.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--10">
+        <img src="img/gal-10.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--11">
+        <img src="img/gal-11.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--12">
+        <img src="img/gal-12.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--13">
+        <img src="img/gal-13.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--14">
+        <img src="img/gal-14.jpeg" alt="gallery" class="gallery__img" />
+      </figure>
+    </section>
+
+    <section class="footer">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="" class="nav__link">Encontra tu casa ideal</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Solicitar informacion</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Descargar planificador</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Contactanos</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Publica tu propiedad</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Trabaja con nosotros</a>
+        </li>
+      </ul>
+      <p class="copyright">&copy; Copyright 2020 por Michel Gimenez</p>
+    </section>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

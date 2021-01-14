@@ -1,0 +1,48 @@
+.footer {
+  background-color: $color-secondary;
+  grid-column: full-start / full-end;
+  padding: 8rem;
+}
+
+// Aca uso grid en vez de flexbox para poder tener espacio controlado de forma mas comoda entre cada item, pudiendo usar el GAP. En vez de
+// usar que quiero 6 columnas una para cada item, directamente coloco que me cree las columnas que entren en el ancho, colocando que como mi
+// nimo tengan 150px de ancho antes del quiebre. Centro todo verticalmente usando align-items center
+.nav {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2rem;
+  align-items: center;
+
+  // Le aplico block a cada link para que se aplique el padding.
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #fff;
+    font-family: $font-display;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.5rem;
+    display: block;
+    transition: all 0.2s;
+  }
+
+  &__link:hover,
+  &__link:active {
+    background-color: rgba(#fff, 0.05);
+    transform: translateY(-3px);
+  }
+}
+
+// Al darle 70% de ancho, no cubre el 100%, para centrar ese 70% dentro del 100%, le doy el truco del margen a los lados en auto, y para cen
+// trar el texto dentro de este div que acabo de centrar, le doy text-align
+.copyright {
+  font-size: 1.4rem;
+  color: $color-grey-light-2;
+  margin-top: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 70%;
+}

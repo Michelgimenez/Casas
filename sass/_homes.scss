@@ -1,0 +1,91 @@
+// Nuevamente el auto fit para adaptar las columnas a diferentes pantallas realizando un quiebre apartir de 250px al achicar la pantalla
+// No defino las rows porque se crean automaticamente
+.homes {
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 7rem;
+}
+
+// En la card de la casa, le digo que quiero 2 columnas, las rows se crean automaticamente al ir queriendo meter todos los elementos
+// y coloco que en el caso de la foto, el nombre de la casa y el boton, quiero que ocupen 2 columnas. La gap es para separar cada row
+// dando entre cada una 35px
+.home {
+  background-color: $color-grey-light-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 3.5rem;
+
+  &__img {
+    width: 100%;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    z-index: 1;
+  }
+
+  // En el caso del SVG quiero que este encima de la imagen asi que especifico la misma row para que quede encima de la imagen y
+  // la segunda columna para que comience en la segunda columna de la primera row. Le doy el z-index para asegurarme que se mantenga
+  // el icono arriba. Para mover el item dentro de un grid de forma horizontal, le doy justify-self y end para que se vaya completamen
+  // te hacia la derecha. El margen para separarlo de los bordes
+  &__like {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    fill: $color-primary;
+    height: 2.5rem;
+    width: 2.5rem;
+    z-index: 2;
+    justify-self: end;
+    margin: 1rem;
+  }
+
+  // El nombre quiero que ocupe solo 80% de ancho, de esa forma me da espacio a los lados y lo centro dentro del grid de forma horizontal
+  // con justify-self. Y para tenerlo hacia arriba quedan encima de la imagen uso overlapping especificando la misma row que la imagen para
+  // tener este texto encima de la imagen, le doy un index alto para estar encima sin ser tapado por la imagen, y lo centro verticalmente
+  // con align-self bottom, y para tenerlo la mitad del elemento hacia abajo, uso transform en un 50% del elemento hacia abajo verticalmente
+  &__name {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 3;
+    width: 80%;
+    justify-self: center;
+    align-self: end;
+    font-family: $font-display;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: $color-secondary;
+    color: #fff;
+    font-weight: 400;
+    transform: translateY(50%);
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+  }
+
+  // Coloco este margen arriba para separar los dos primeros iconos del titulo de las casas ya que no puedo modificar la primera gap
+  // de forma individual
+  &__location,
+  &__rooms {
+    margin-top: 2.5rem;
+  }
+
+  // El flex para tener primero el icono y despues el texto y lo centro verticalmente
+  &__location,
+  &__price,
+  &__rooms,
+  &__area {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+
+    svg {
+      fill: $color-primary;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
+  }
+}

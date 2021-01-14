@@ -1,0 +1,85 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+// FONT VARIABLES
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+// MEDIA QUERIES
+$bp-largest: 75em; // 1200 % 16 = 75. 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px % 16px = 62.5%, 1rem = 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 9vh 91vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end]
+    minmax(6rem, 1fr) [full-end];
+
+  &.container-updated {
+    grid-template-rows: 100vh min-content 40vw repeat(3, min-content);
+  }
+
+  // Apartir de 1000px la barra se quita la columna de la barra de navegacion y se agrega una row para tener ahi la sidebar arriba de todo
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr) [full-end];
+  }
+
+  // Apartir de 800px el row del header ocupa el 100% del alto pero hago que calcule el alto restandole lo que contiene la sidebar y creo una
+  // row nueva que tenga como minimo de alto, lo necesario para que encajen los vendedores. En este caso quito todas las demas rows, ya que
+  // css grid se encarga automaticamente de crear rows implicitas que tienen altura en base al contenido, como las unicas alturas personali
+  // zadas que tengo son la de la sidebar y el header, las demas dejo que se creen en base al contenido que tienen, siendo algo asi como min
+  // content cada una y adaptandose automaticamente al achicar la pantalla
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
+
+  @media screen and(max-width: 650px) {
+    grid-template-rows: 100vh min-content min-content 40vw repeat(
+        3,
+        min-content
+      );
+  }
+}

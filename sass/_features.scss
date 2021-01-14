@@ -1,0 +1,39 @@
+// Uso display grid para poder usar las properties de css grid, en este caso dentro de esta seccion que abarca 8 columnas, voy a crear
+// dentro 3 columnas de 1fr cada una, de esa forma al tener 6 divs, automaticamente se crean 2 rows para encajar las 6 columnas que se
+// crean. Pero despues aplico algo mejor, aplico un auto-fit que se encarga de encajar las columnas en base al espacio disponible, en este
+// caso coloco que quiero que cada columna ocupe como max el espacio disponible con 1fr, y como minimo 250px, de esa forma al ir achicando
+// la pantalla, cuando se baje de los 250px, automaticamente se realiza un quiebre creando mas rows al bajar las columnas. GAP es para colo
+// car espacio entre las columnas y las rows. El align es para que el contenido de cada columna comience desde arriba, el h4 y el p, puedo
+// poner end o center para recordar que es lo que hace.
+.features {
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start;
+}
+
+// Lo pongo separado de features porque este seria otro componente reutilizable. En este caso vuelvo a crear un grid para poder especificar
+// que quiero 2 columnas, una para el icono que cubra de espacio solo el contenido del icono, y la segunda que cubra lo restante para el tex
+// to. El icono ocupa la primera y segunda row, de esa forma el parrafo queda en la segunda row, en la segunda columna. las gap son para crear
+// los espacios entre las columnas y rows.
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    height: 4.5rem;
+    width: 4.5rem;
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}

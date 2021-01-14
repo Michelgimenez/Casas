@@ -1,0 +1,181 @@
+// Aca coloco que quiero que la sidebar ocupe 1 columna, ya que cito los nombres de la primera columna de la sidebar de 80px
+// Y coloco que comience en la primera row y abarque todas las que haya hacia abajo ya que puse -1
+// Le doy flex para poder usar justify-content y centrar horizontalmente con
+.sidebar {
+  background-color: $color-secondary;
+  grid-column: 1/ -1;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16rem;
+
+  &.sticky {
+    position: fixed;
+    background-color: rgba(85, 85, 85, 0.781);
+    animation: show 0.7s ease-in-out forwards;
+    width: 100%;
+    height: 8vh;
+    z-index: 900;
+    padding: 0 10rem;
+    grid-column: full-start / full-end !important;
+  }
+
+  @media screen and(max-width: 1600px) {
+    padding: 0 10rem;
+  }
+
+  @media screen and(max-width: 1200px) {
+    padding: 0 3rem;
+  }
+
+  @media screen and(max-width: 650px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__link:link,
+  &__link:visited {
+    margin-right: 4rem;
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: $font-display;
+    text-decoration: none;
+    transition: all 0.5s;
+  }
+
+  &__link:hover {
+    color: $color-primary;
+  }
+
+  &__logo {
+    height: 5rem;
+    margin-left: 4rem;
+  }
+}
+
+.burguer {
+  display: none;
+  transition: opacity 0.5s;
+  z-index: 100000;
+
+  &.open {
+    z-index: 10000000;
+
+    span {
+      background-color: #fff;
+    }
+
+    > span:first-child {
+      transform: rotate(46deg);
+    }
+
+    > span:nth-child(2) {
+      opacity: 0;
+    }
+
+    > span:last-child {
+      transform: rotate(-47deg);
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media only screen and (max-width: 650px) {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 2rem;
+    padding: 2.5rem;
+    z-index: 20;
+    cursor: pointer;
+  }
+
+  > span {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: #c69963;
+    transform-origin: 4px 1px;
+    transition: all 0.5s;
+
+    @media only screen and (max-width: 510px) {
+      width: 30px;
+      height: 2px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  overflow: hidden;
+
+  &.open {
+    @media screen and(max-width: 650px) {
+      visibility: visible;
+      z-index: 10000000;
+
+      .mobile-nav__overlay {
+        transform: scaleX(1);
+        transition-duration: 0.5s;
+      }
+
+      .mobile-nav__links {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__overlay {
+    background-color: #c69963d2;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    transform: scaleX(0);
+    transition: all 0.5s ease-in-out;
+    z-index: 10000000;
+  }
+
+  &__links {
+    max-height: 100vh;
+    max-width: 90vw;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      font-size: 3rem;
+      color: #dfdfdf;
+      transition: color 1s;
+    }
+
+    a:link,
+    a:visited {
+      margin: 2rem 0;
+      text-align: center;
+      z-index: 5;
+    }
+
+    a:hover {
+      color: #000;
+    }
+  }
+}
